@@ -1,0 +1,35 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 1;
+}
+
+.agent-operation a {
+  color: #4db6f9;
+}
+
+span.agent-split {
+  margin: 0 10px;
+  display: inline-block;
+  height: 15px;
+  width: 2px;
+  background: #aaaaaa7a;
+  vertical-align: middle;
+}
+
+.bg-black-agent {
+  background-color: #ffe7ba;
+}
+
+a.status-link:not(:first-child) {
+  margin-left: 20px;
+}
+
+a.status-link {
+  color: #777;
+}
+
+.status-active {
+  color: #20a0ff !important;
+}

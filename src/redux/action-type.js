@@ -1,0 +1,4 @@
+export const SET_CUSTOMER_LIST = "SET_CUSTOMER_LIST";
+export const UPDATE_CUSTOMER_INFO = "UPDATE_CUSTOMER_INFO";
+
+export const SET_USER = "SET_USER";
