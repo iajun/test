@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@/api/*": ["./src/api/*"],
+      "@/cpt/*": ["./src/component/*"],
+      "@/redux/*": ["./src/redux/*"],
+      "@/route/*": ["./src/route/*"],
+      "@/util/*": ["./src/util/*"],
+      "@/view/*": ["./src/view/*"],
+      "@/css/*": ["./src/asset/css/*"],
+      "@/img/*": ["./src/asset/img/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}

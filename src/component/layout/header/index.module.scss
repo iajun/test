@@ -1,0 +1,16 @@
+$header-height: 45px;
+$header-bg: white;
+
+.header {
+  height: $header-height;
+  background: $header-bg;
+}
+
+.header-user {
+  line-height: $header-height;
+  text-align: right;
+}
+
+.ant-menu {
+  background: $header-bg !important;
+}

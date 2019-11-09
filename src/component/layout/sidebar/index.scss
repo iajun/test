@@ -1,0 +1,12 @@
+$sidebar-width: 170px;
+
+.sidebar {
+  width: $sidebar-width !important;
+  max-width: $sidebar-width !important;
+  min-width: $sidebar-width !important;
+  flex: 0 !important;
+}
+
+.ant-menu-submenu-title {
+  padding-left: 16px !important;
+}

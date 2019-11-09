@@ -1,12 +1,15 @@
 {
+  "extends": "airbnb",
+  "parser": "babel-eslint",
   "parserOptions": {
-      "ecmaVersion": 6,
-      "sourceType": "module",
-      "ecmaFeatures": {
-          "jsx": true
-      }
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "rules": {
-      "semi": 2
+    "semi": 2,
+    "no-nested-ternary": "off"
   }
 }
