@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, memo } from "react";
 import { Layout } from "antd";
 import { connect } from "react-redux";
-import { setCustomerList, setUser } from "@redux/async-actions";
+import { setCustomerList, setUser, setProxyList } from "@redux/async-actions";
 
 import BaseFooter from "@cpt/layout/footer";
 import BaseHeader from "@cpt/layout/header";
@@ -9,27 +9,43 @@ import BaseSideBar from "@cpt/layout/sidebar";
 import styles from "./index.module.scss";
 
 const BaseLayout = props => {
-  props.setCustomerList();
-  props.setUser();
+  useEffect(() => {
+    props.setCustomerList();
+    props.setUser();
+    props.setProxyList();
+  }, []);
+
+  console.log("layout");
 
   return (
-    <div>
-      <BaseHeader />
-      <Layout className={styles["main"]}>
-        <BaseSideBar collapsed={false} />
-        <Layout.Content className={styles["content-wrapper"]}>
-          <div className={styles["content"]}>{props.children}</div>
-          <BaseFooter />
-        </Layout.Content>
+    <>
+      <Layout>
+        <BaseSideBar
+          style={{
+            overflow: "hidden",
+            height: "100vh",
+            position: "fixed",
+            left: 0
+          }}
+        />
+
+        <Layout className={styles["content-wrapper"]} id="scroll-content">
+          <BaseHeader />
+          <Layout.Content className={styles["content"]}>
+            {props.children}
+            <BaseFooter />
+          </Layout.Content>
+        </Layout>
       </Layout>
-    </div>
+    </>
   );
 };
 
-export default connect(
-  null,
-  dispatch => ({
+export default memo(
+  connect(null, dispatch => ({
     setCustomerList: () => dispatch(setCustomerList()),
+    setProxyList: () => dispatch(setProxyList()),
     setUser: () => dispatch(setUser())
-  })
-)(BaseLayout);
+  }))(BaseLayout),
+  () => true
+);

@@ -5,7 +5,8 @@ import { message } from "antd";
 const cookie = new Cookie();
 
 const instance = axios.create({
-  baseURL: "http://127.0.0.1:8010/v1/dashboard",
+  // baseURL: "https://admin.juhe.baishancloud.com/v1/dashboard",
+  baseURL: "http://admin.t.com/v1/dashboard",
   timeout: 10000
 });
 
@@ -27,14 +28,14 @@ const _axios = (config = {}, opts = {}) =>
       return res.data;
     })
     .catch(err => {
-      if (err.response.data && err.response.data.code) {
+      if (err.response && err.response.data && err.response.data.code) {
         const { code, message: _msg } = err.response.data;
         if ([401002, 401003, 401004].includes(code)) {
           location.pathname = "/login";
         }
         message.error(_msg);
       } else {
-        message.error(err.response.statusText || "网络错误，请稍后再试");
+        message.error("网络错误，请稍后再试");
       }
     });
 export default _axios;

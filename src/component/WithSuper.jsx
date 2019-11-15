@@ -1,13 +1,16 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-const WithSuper = ({ super: Super, normal: Normal = null, ...params }) => {
+const withSuper = ({ su: Su, op: Op }) => {
   const user = useSelector(state => state.user);
-  return user.kind === "super" ? (
-    <Super {...params} />
-  ) : Normal ? (
-    <Normal {...params} />
-  ) : null;
+  const isSuper = user.kind === "super";
+  const isOp = user.role === "op";
+
+  if ((Su && !isSuper) || (Op && !isSuper && !isOp)) {
+    return null;
+  } else {
+    return Su ? <Su /> : <Op />;
+  }
 };
 
-export default WithSuper;
+export default withSuper;

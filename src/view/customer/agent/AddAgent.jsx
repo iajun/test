@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Form, Input, Button, Modal, Radio, Select, message } from "antd";
-import request from "@api/tools/request"
+import request from "@api/tools/request";
 
 const Option = Select.Option;
 
@@ -108,7 +108,8 @@ class AddAgent extends Component {
         onCancel={() => setAddVisible(false)}
         title="添加代理"
         footer={null}
-        className="add-agent-modal">
+        className="add-agent-modal"
+      >
         <main>
           <Form layout="horizontal">
             <Form.Item label="客户名" {...formItemLayout}>
@@ -119,7 +120,8 @@ class AddAgent extends Component {
                   showSearch
                   filterOption={false}
                   placeholder="输入客户名搜索"
-                  onSearch={this.onSearch}>
+                  onSearch={this.onSearch}
+                >
                   {options}
                 </Select>
               )}
@@ -175,7 +177,8 @@ class AddAgent extends Component {
           style={{
             textAlign: "center",
             margin: "30px 10px 0 10px"
-          }}>
+          }}
+        >
           <Button onClick={setAddVisible.bind(null, false)}>取消</Button>
           <Button
             type="primary"
@@ -183,7 +186,8 @@ class AddAgent extends Component {
             style={{
               marginLeft: "40px"
             }}
-            loading={loading}>
+            loading={loading}
+          >
             确认
           </Button>
         </footer>

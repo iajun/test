@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Form, Input, Button, Modal, Radio, message } from "antd";
-import request from "@api/tools/request"
+import request from "@api/tools/request";
 
 class EditAgent extends Component {
   constructor(props) {

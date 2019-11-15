@@ -5,11 +5,45 @@
   }
 }
 
-// $menu-bk-color: #414141;
+div.ant-form-explain {
+  font-size: 12px !important;
+}
 
-// .ant-menu-dark {
-//   background: $menu-bk-color;
-//   .ant-menu-inline.ant-menu-sub {
-//     background: $menu-bk-color;
-//   }
-// }
+.ant-modal-body {
+  i.alert {
+    font-size: 32px;
+    vertical-align: middle;
+    padding-right: 14px;
+  }
+
+  span.content {
+    font-size: 13px;
+  }
+}
+
+.ant-table {
+  background: white;
+}
+
+.ant-btn {
+  height: 28px !important;
+  padding: 0 15px 2px !important;
+}
+
+.ant-table-filter-dropdown {
+  min-width: 60px !important;
+  margin-left: 28px;
+}
+
+input.ant-input {
+  height: 28px !important;
+  padding: 0 14px !important;
+}
+
+.ant-input-affix-wrapper .ant-input:not(:first-child) {
+  padding-left: 30px !important;
+}
+
+.ant-table-thead > tr > th {
+  font-weight: 500;
+}

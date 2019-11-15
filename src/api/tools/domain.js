@@ -10,7 +10,7 @@ const host = window.location.host;
 const domainList = [
   {
     regexp: /127.0.0.1/,
-    domain: "http://127.0.0.1:8010"
+    domain: "http://admin.t.com"
   },
   {
     regexp: /admin\.juhe\.baishancloud\.com/,
@@ -26,7 +26,8 @@ for (let i = 0; i < domainList.length; i++) {
 }
 
 if (!domain) {
-  domain = "http://127.0.0.1:8010";
+  // domain = "https://admin.juhe.baishancloud.com";
+  domain = "http://admin.t.com";
 }
 
 export default domain;

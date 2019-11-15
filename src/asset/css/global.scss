@@ -1,18 +1,23 @@
 @import "./antd-reset.scss";
+@import "./style.scss";
+@import "./color.scss";
 
-span,
-p,
 div,
-b,
-i,
+span,
+table,
 a,
-input,
-button,
-textarea,
-footer,
-header,
-main {
+form {
   font-size: 12px;
+}
+
+body {
+  height: 100vh;
+}
+
+label,
+textarea,
+input {
+  font-size: 12px !important;
 }
 
 body {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { message, Modal } from "antd";
-import request from "@api/tools/request"
-import {  openURL  } from "@util/tools"
+import request from "@api/tools/request";
+import { openURL } from "@util/tools";
 import AgentHeader from "./AgentHeader";
 import AgentContent from "./AgentContent";
 import AddAgent from "./AddAgent";
@@ -64,11 +64,7 @@ export default class CustomerAgent extends Component {
   };
 
   deleteAgent = async agent => {
-    let res = await request(
-      `/dashboard/proxy/${agent.name}`,
-      "delete",
-      {}
-    );
+    let res = await request(`/dashboard/proxy/${agent.name}`, "delete", {});
     if (!res || res.code) {
       return message.error(res.message || "网络错误，请稍后再试");
     }

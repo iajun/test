@@ -3,104 +3,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 const { SubMenu } = Menu;
 const { Sider } = Layout;
-import "./index.scss";
+import styles from "./index.module.scss";
+import logo from "@img/modules/logo_white.svg";
 
 class PCSidebar extends React.Component {
-  state = {
-    collapsed: false,
-    mode: "inline",
-    defaultOpenKeys: "",
-    defaultSelectedKeys: "",
-    openKey: "",
-    selectedKey: "",
-    firstHide: false, // 点击收缩菜单，第一次隐藏展开子菜单，openMenu时恢复
-    kind: ""
-  };
-  menuClick = e => {
-    this.setState({
-      selectedKey: location.hash.replace(/#/g, ""),
-      openKey: location.hash.replace(/#/g, "").split("/")[2]
-    });
-  };
-  openMenu = v => {
-    this.setState({
-      openKey: v[v.length - 1],
-      firstHide: false
-    });
-  };
-  componentDidMount() {
-    let select_key = "";
-    if (location.hash.replace(/#/g, "").split("/").length > 4) {
-      select_key = location.hash
-        .replace(/#/g, "")
-        .split("/")
-        .slice(0, 4)
-        .join("/");
-    } else {
-      select_key = location.hash.replace(/#/g, "");
-    }
-    if (select_key == "") {
-      this.setState({
-        selectedKey: "/customer/list",
-        openKey: "customer"
-      });
-    } else {
-      this.setState({
-        selectedKey: select_key,
-        openKey: location.hash.replace(/#/g, "").split("/")[2]
-      });
-    }
-  }
-  componentWillReceiveProps(nextProps) {
-    let select_key = "";
-    if (location.hash.replace(/#/g, "").split("/").length > 4) {
-      select_key = location.hash
-        .replace(/#/g, "")
-        .split("/")
-        .slice(0, 4)
-        .join("/");
-    } else {
-      select_key = location.hash.replace(/#/g, "");
-    }
-    if (select_key == "") {
-      this.setState({
-        selectedKey: "/customer/list",
-        openKey: "customer"
-      });
-    } else {
-      this.setState({
-        selectedKey: select_key,
-        openKey: location.hash.replace(/#/g, "").split("/")[2]
-      });
-    }
-    if (nextProps.collapsed) {
-      this.setState({
-        firstHide: true
-      });
-    } else {
-      this.setState({
-        firstHide: false
-      });
-    }
-  }
   render() {
     return (
-      <Sider
-        trigger={null}
-        breakpoint="lg"
-        collapsed={this.props.collapsed}
-        className="sidebar"
-      >
-        <Menu
-          onClick={this.menuClick}
-          theme="dark"
-          mode="inline"
-          defaultOpenKeys={[this.state.defaultOpenKeys]}
-          defaultSelectedKeys={[this.state.defaultSelectedKeys]}
-          selectedKeys={[this.state.selectedKey]}
-          openKeys={this.state.firstHide ? null : [this.state.openKey]}
-          onOpenChange={this.openMenu}
-        >
+      <Sider className={styles["sidebar"]}>
+        <div className={styles["ico"]}>
+          <img src={logo} alt="" />
+        </div>
+        <Menu theme="dark" mode="inline">
           <SubMenu
             key="admin"
             title={

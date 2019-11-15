@@ -1,12 +1,11 @@
-.main {
-  min-height: calc(100vh - 45px);
-}
 .content-wrapper {
-  padding: 10px 20px;
+  height: 100vh;
+  background: #f1f2f5;
   position: relative;
+  overflow: scroll;
 }
 
 .content {
-  background: white;
-  padding: 10px 20px;
+  padding: 10px;
+  overflow: initial;
 }

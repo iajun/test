@@ -16,7 +16,7 @@ import {
   Tag
 } from "antd";
 import React from "react";
-import request from "@api/tools/request"
+import request from "@api/tools/request";
 import Cookies from "universal-cookie";
 import moment from "moment";
 import { CopyToClipboard } from "react-copy-to-clipboard";
@@ -552,7 +552,7 @@ class CustomerList extends React.Component {
               }}
             >
               <span
-                className="cursor-click color-main"
+                className="cursor-click color-orange-1"
                 onClick={() =>
                   this.handleCreateTimeSearch(selectedKeys, confirm)
                 }
@@ -560,7 +560,7 @@ class CustomerList extends React.Component {
                 确定
               </span>
               <span
-                className="cursor-click color-main"
+                className="cursor-click color-orange-1"
                 onClick={() => this.handleCreateTimeReset(clearFilters)}
               >
                 全部
@@ -1473,7 +1473,7 @@ class CustomerList extends React.Component {
                     .cursor-click {
                       cursor: pointer;
                     }
-                    .color-main {
+                    .color-orange-1 {
                        color: #20a0ff;
                     }
                 `}

@@ -37,7 +37,8 @@ const AgentHeader = ({
             <a
               onClick={filterCustomerType.bind(null, k)}
               key={k}
-              className={cs(k)}>
+              className={cs(k)}
+            >
               {typeMap[k]}
             </a>
           ))}

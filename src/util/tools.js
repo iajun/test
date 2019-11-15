@@ -3,6 +3,9 @@
  * @LastEditors: Sharp
  * @LastEditTime: 2019-09-30 14:29:33
  */
+
+import _copy from "copy-to-clipboard";
+
 export const secFormat = sec => {
   let format = "";
   if (typeof sec !== "number") {
@@ -23,8 +26,24 @@ export const secFormat = sec => {
 };
 
 export const openURL = (url, target) => {
-  const linkTag = document.createElement('a');
-  linkTag.setAttribute('href', url);
-  linkTag.setAttribute('target', target);
+  const linkTag = document.createElement("a");
+  linkTag.setAttribute("href", url);
+  linkTag.setAttribute("target", target);
   linkTag.click();
+};
+
+export const diffObj = (dest, origin) => {
+  let ret = {};
+  Object.keys(dest).forEach(k => {
+    let val = dest[k];
+    if (val !== origin[k]) {
+      ret[k] = val;
+    }
+  });
+  return ret;
+};
+
+export const copy = (txt, onOk) => {
+  _copy(txt);
+  onOk && onOk();
 };

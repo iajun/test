@@ -1,0 +1,22 @@
+$sidebar-width: 170px;
+
+.sidebar {
+  width: $sidebar-width !important;
+  max-width: $sidebar-width !important;
+  min-width: $sidebar-width !important;
+  flex: 0 !important;
+  height: 100vh;
+}
+
+.ant-menu-submenu-title {
+  padding-left: 16px !important;
+}
+
+.ico {
+  width: 60px;
+  height: 80px;
+
+  img {
+    width: 70px;
+  }
+}
